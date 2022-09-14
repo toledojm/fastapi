@@ -5,5 +5,3 @@ PyMySQL
 SQLAlchemy
 mysqlclient
 mysql-connector-python
-ssl
-urllib
