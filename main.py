@@ -29,7 +29,7 @@ df_drivers.drop(['name','url','dob','code','number'], axis=1, inplace=True)
 df_results.drop(['position','fastestLapTime','time','milliseconds','fastestLapSpeed','fastestLap','grid','positionText'], axis=1, inplace=True)
 
 
-SQLALCHEMY_DATABASE_URL = "mysql+pymysql://root:toledin1@127.0.0.1/db"
+SQLALCHEMY_DATABASE_URL = "mysql+pymysql://root:toledin1@localhost/db"
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
