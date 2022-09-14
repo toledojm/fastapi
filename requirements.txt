@@ -1,7 +1,8 @@
 fastapi
 uvicorn
 pandas
-PyMySQL
 SQLAlchemy
 mysqlclient
 mysql-connector-python
+mysql
+pymysql

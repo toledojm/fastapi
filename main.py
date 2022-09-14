@@ -1,9 +1,16 @@
-
+from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
 import pandas as pd
 import urllib.request
 import ssl
+from sqlalchemy import Column, ForeignKey, Integer, String, Float
+from sqlalchemy.orm import relationships
 from fastapi import FastAPI
-import mysql.connector
+import pymysql
+pymysql.install_as_MySQLdb()
+
+
 
 ssl._create_default_https_context = ssl._create_unverified_context
 circuits = urllib.request.urlopen('https://raw.githubusercontent.com/toledojm/PI01_DATA03/main/Datasets/circuits.csv')
@@ -26,21 +33,39 @@ df_drivers.drop(['name','url','dob','code','number'], axis=1, inplace=True)
 df_results.drop(['position','fastestLapTime','time','milliseconds','fastestLapSpeed','fastestLap','grid','positionText'], axis=1, inplace=True)
 
 
+SQLALCHEMY_DATABASE_URL = "mysql+mysqldb://root:toledin1@localhost/db"
 
+engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
-mydb = mysql.connector.connect(
-  host="localhost",
-  user="root",
-  password="toledin1"
-)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+Base = declarative_base()
 
-mycursor = mydb.cursor()
-mycursor.execute("CREATE DATABASE mydatabase")
-
-with mycursor as conn:
+with engine.connect() as conn, conn.begin():
     df_circuits.to_sql('circuit', conn, if_exists='append', index=False)
     df_constructors.to_sql('constructor', conn, if_exists='append', index=False)
     df_drivers.to_sql('driver', conn, if_exists='append', index=False)
     df_results.to_sql('result', conn, if_exists='append', index=False)
     df_races.to_sql('race', conn, if_exists='append', index=False)
+
+app = FastAPI()
+
+
+@app.get("/")
+async def root():
+    return {"message": "Ingrese /Piloto en la url para conocer el piloto con mayor cantidad de primeros puestos"}
+
+
+@app.get("/Piloto/")
+async def driver():
+    query2 ='''select d.surname as Apellido, count(r.positionOrder) as CantVictorias
+    from driver d
+    join result r
+    on (r.driverId = d.driverId)
+    where r.positionOrder = 1
+    group by d.surname
+    order by CantVictorias DESC
+    LIMIT 1'''
+    df = pd.read_sql(query2, engine)
+    nombre=df['Apellido']
+    return {"El Piloto con mayor cantidad de primeros puestos es:": nombre}
 
