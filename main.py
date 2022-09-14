@@ -33,12 +33,9 @@ df_drivers.drop(['name','url','dob','code','number'], axis=1, inplace=True)
 df_results.drop(['position','fastestLapTime','time','milliseconds','fastestLapSpeed','fastestLap','grid','positionText'], axis=1, inplace=True)
 
 
-SQLALCHEMY_DATABASE_URL = "mysql+mysqldb://root:toledin1@localhost/db"
+URL = "mysql+mysqldb://root:toledin1@localhost/db"
 
-engine = create_engine(SQLALCHEMY_DATABASE_URL)
-
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-Base = declarative_base()
+engine = create_engine(URL)
 
 with engine.connect() as conn, conn.begin():
     df_circuits.to_sql('circuit', conn, if_exists='append', index=False)
