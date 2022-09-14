@@ -31,7 +31,7 @@ df_results.drop(['position','fastestLapTime','time','milliseconds','fastestLapSp
 
 SQLALCHEMY_DATABASE_URL = "mysql+pymysql://root:toledin1@localhost/db"
 
-engine = create_engine(SQLALCHEMY_DATABASE_URL, pool_pre_ping=True)
+engine = create_engine(SQLALCHEMY_DATABASE_URL, pool_pre_ping=True,port = 3306)
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
