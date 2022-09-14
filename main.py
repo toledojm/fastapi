@@ -7,7 +7,7 @@ import ssl
 from sqlalchemy import Column, ForeignKey, Integer, String, Float
 from sqlalchemy.orm import relationships
 from fastapi import FastAPI
-import mysql.connector
+
 
 
 
