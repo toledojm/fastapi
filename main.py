@@ -32,9 +32,9 @@ df_drivers.drop(['name','url','dob','code','number'], axis=1, inplace=True)
 df_results.drop(['position','fastestLapTime','time','milliseconds','fastestLapSpeed','fastestLap','grid','positionText'], axis=1, inplace=True)
 
 
-URL = "mysql://root:toledin1@127.0.0.1/db"
+URL = "mysql+pymsql://root:toledin1@127.0.0.1/db"
 
-engine = create_engine(URL)
+engine = create_engine(URL, pool_pre_ping=True)
 
 with engine.connect() as conn, conn.begin():
     df_circuits.to_sql('circuit', conn, if_exists='append', index=False)
