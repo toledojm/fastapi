@@ -7,8 +7,7 @@ import ssl
 from sqlalchemy import Column, ForeignKey, Integer, String, Float
 from sqlalchemy.orm import relationships
 from fastapi import FastAPI
-import pymysql
-pymysql.install_as_MySQLdb()
+import mysql.connector
 
 
 
@@ -33,7 +32,7 @@ df_drivers.drop(['name','url','dob','code','number'], axis=1, inplace=True)
 df_results.drop(['position','fastestLapTime','time','milliseconds','fastestLapSpeed','fastestLap','grid','positionText'], axis=1, inplace=True)
 
 
-URL = "mysql+mysqldb://root:toledin1@localhost/db"
+URL = "mysql+mysqlconnector://root:toledin1@localhost/db"
 
 engine = create_engine(URL)
 
