@@ -1,7 +1,10 @@
 fastapi
 uvicorn
-sqlalchemy==1.4.37
+sqlalchemy
 pymysql==1.0.2
 pandas==1.4.2
 python-dotenv==0.20.0
 psycopg2-binary==2.9.3
+python-mysqldb
+MySQL-python
+mysqlclient
