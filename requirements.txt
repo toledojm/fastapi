@@ -1,9 +1,9 @@
-fastapi==0.83.0
-uvicorn==0.17.6
-pandas==1.4.4
-PyMySQL==1.0.2
-SQLAlchemy==1.4.41
-mysqlclient==2.1.1
-mysql-connector-python==8.0.30
+fastapi
+uvicorn
+pandas
+PyMySQL
+SQLAlchemy
+mysqlclient
+mysql-connector-python
 ssl
 urllib
