@@ -32,7 +32,7 @@ df_drivers.drop(['name','url','dob','code','number'], axis=1, inplace=True)
 df_results.drop(['position','fastestLapTime','time','milliseconds','fastestLapSpeed','fastestLap','grid','positionText'], axis=1, inplace=True)
 
 
-URL = "mysql+mysqlconnector://root:toledin1@localhost/db"
+URL = "mysql+pymysql://root:toledin1@localhost/db"
 
 engine = create_engine(URL)
 
