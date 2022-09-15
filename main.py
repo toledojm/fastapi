@@ -4,9 +4,6 @@ import pandas as pd
 from database import engine
 import crud 
 
-
-engine.connect()
-
 app = FastAPI()
 
 # se crea la url de bienvenida
