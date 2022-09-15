@@ -1,13 +1,12 @@
 # Proyecto Individual 1- Data 03- Soy Henry
-## José María Toledo
+###### José María Toledo
 
-### Creación de una API
+### Consigna: Creación de una API
 
-
-### Consigna
 Para este proyecto individual, se creo y ejecuto de una API mediante el framework de FastAPI y el deploy en Heroku.
 
 ### Ejecución
+
 Se crearon los scripts correspondientes en phyton para:
 1. realizar la ingesta y normalización de los datasets del repositorio de github forkeado ubicado en https://github.com/FnegreteHenry/PI01_DATA03
 2. crear la conexion a base de datos jwsDB MySQL
@@ -23,10 +22,11 @@ Se crearon los scripts correspondientes en phyton para:
 ### Descripción de los Scrpits/modulos del repositorio de github utilizados para el deploy en Heroku.
 
 dentro de la carpeta fastappi se crean los modulos:
-
 - database.py ->se crea la conexión mediante sqlalchemy al database de jwsDB MySQL y se crean las funciones con las query's para interactuar con el database
-- main.py     ->se integran y usan todos modulos con el framework de FastAPI
-- models.py   ->se realiza la ingesta y normalización de los datasets
+- *main.py*->se integran y usan todos modulos con el framework de FastAPI
+- *models.py*->se realiza la ingesta y normalización de los datasets
+- *requirements.txt*->modulos externos a phyton para correr el el deploy en Heroku
+- *Procfile*-> contiene la sentencia de *uvicorn* para correr el framework de FastAPI
 
 
 
