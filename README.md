@@ -29,7 +29,7 @@ Se crearon los scripts/moldulos correspondientes en un repositorio de github par
 ### Descripción de los Scrpits/modulos del repositorio de github utilizados para el deploy en Heroku.
 
 dentro de la carpeta fastappi se crean los modulos:
-- *database.py* ->donde se crea la conexión mediante sqlalchemy al database de jawsDB MySQL y se crean las funciones con las query's para interactuar con el database
+- *database.py* ->donde se crea la conexión mediante sqlalchemy a la base de datos de jawsDB MySQL y se crean las funciones con las querys necesarias
 - *main.py*->donde se integran y usan todos modulos con el framework de FastAPI
 - *models.py*->donde se realiza la ingesta y normalización de los datasets
 - *requirements.txt*->se listan modulos externos a phyton que van correr en el deploy en Heroku
