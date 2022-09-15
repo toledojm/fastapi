@@ -13,11 +13,11 @@ engine = create_engine(SQLALCHEMY_DATABASE_URL)
 # se crea claves primarias y foraneas para relacionar las tablas creadas
 
 with engine.connect() as conn, conn.begin():
-    df_circuits.to_sql('circuit', conn, if_exists='append', index=False)
-    df_constructors.to_sql('constructor', conn, if_exists='append', index=False)
-    df_drivers.to_sql('driver', conn, if_exists='append', index=False)
-    df_results.to_sql('result', conn, if_exists='append', index=False)
-    df_races.to_sql('race', conn, if_exists='append', index=False)
+    df_circuits.to_sql('circuit', conn, if_exists='replace', index=False)
+    df_constructors.to_sql('constructor', conn, if_exists='replace', index=False)
+    df_drivers.to_sql('driver', conn, if_exists='replace', index=False)
+    df_results.to_sql('result', conn, if_exists='replace', index=False)
+    df_races.to_sql('race', conn, if_exists='replace', index=False)
     conn.execute('''ALTER TABLE circuit ADD PRIMARY KEY(circuitId);''')
     conn.execute('''ALTER TABLE constructor ADD PRIMARY KEY(constructorId);''')
     conn.execute('''ALTER TABLE driver ADD PRIMARY KEY(driverId);''')
