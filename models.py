@@ -4,7 +4,7 @@ import urllib.request
 import ssl
 from database import engine
 
-
+engine.connect()
 # se crea la ingesta de los datasets desde el repo de github forkeado PI01_DATA03
 
 # se crea las url correspondientes a cada dataset de interes

@@ -1,11 +1,11 @@
 from sqlalchemy.types import *
 from fastapi import FastAPI
 import pandas as pd
-from database import SessionLocal, engine
+from database import engine
 import crud
 from sqlalchemy.orm import Session
 
-Session=SessionLocal()
+engine.connect()
 
 app = FastAPI()
 
