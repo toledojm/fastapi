@@ -14,7 +14,7 @@ Para este proyecto individual, se creo y ejecuto una API mediante el framework d
 
 ### Ejecución
 
-Se crearon los scripts correspondientes en phyton para:
+Se crearon los scripts/moldulos correspondientes en un repositorio de github para:
 1. realizar la ingesta y normalización de los datasets del repositorio de github forkeado ubicado en https://github.com/FnegreteHenry/PI01_DATA03
 2. crear la conexion a base de datos jawsDB MySQL
 3. crear, instanciar y realizar las query's nesesarias para responder las preguntas de PI en el framework de FastAPI
