@@ -16,26 +16,40 @@ Para este proyecto individual, se creo y ejecuto una API mediante el framework d
 
 Se crearon los scripts/moldulos correspondientes en un repositorio de github para:
 1. realizar la ingesta y normalización de los datasets del repositorio de github forkeado https://github.com/FnegreteHenry/PI01_DATA03
-2. crear la conexion a la base de datos jawsDB MySQL
-3. realizar las query's nesesarias para responder las preguntas de PI en el framework de FastAPI
-4. realizar el deploy en Heroku https://josetoledo-dhs-fastapi.herokuapp.com/
-- Año con más carreras https://josetoledo-dhs-fastapi.herokuapp.com/year/
-- Piloto con mayor cantidad de primeros puestos https://josetoledo-dhs-fastapi.herokuapp.com/piloto/
-- Nombre del circuito más corrido https://josetoledo-dhs-fastapi.herokuapp.com/circuito/
-- Piloto con mayor cantidad de puntos en total, cuyo constructor sea de nacionalidad sea American o British https://josetoledo-dhs-fastapi.herokuapp.com/piloto_ganador/
+
+2. Se creo la conexion a la base de datos jawsDB MySQL
+
+3. Se realizaron las querys nesesarias para responder las preguntas de Proyento Individual con el metodo get del framework de FastAPI
+
+4. Se realizó el deploy en Heroku
 
 
   
 ### Descripción de los Scrpits/modulos del repositorio de github utilizados para el deploy en Heroku.
 
 dentro de la carpeta fastappi se crean los modulos:
-- *database.py* ->donde se crea la conexión mediante sqlalchemy a la base de datos de jawsDB MySQL y se ingestan los datases
+
 - *models.py*->donde se realiza la ingesta y normalización de los datasets
+
+- *database.py* ->donde se crea la conexión mediante sqlalchemy a la base de datos de jawsDB MySQL y se ingestan los datases
+
 - *main.py*->donde se instancia al framework de FastAPI y mediante los metodos get se crean las funciones para mostar el resultado de las querys
+
 - *requirements.txt*->se listan modulos externos a phyton que van correr en el deploy en Heroku
+
 - *Procfile*-> contiene la sentencia de uvicorn para correr el framework de FastAPI
 
+### Ejecución de la API
 
+- Pantalla principal https://josetoledo-dhs-fastapi.herokuapp.com/
+
+- Año con más carreras https://josetoledo-dhs-fastapi.herokuapp.com/year/
+
+- Piloto con mayor cantidad de primeros puestos https://josetoledo-dhs-fastapi.herokuapp.com/piloto/
+
+- Nombre del circuito más corrido https://josetoledo-dhs-fastapi.herokuapp.com/circuito/
+
+- Piloto con mayor cantidad de puntos en total, cuyo constructor sea de nacionalidad sea American o British https://josetoledo-dhs-fastapi.herokuapp.com/piloto_ganador/
 
 
 
