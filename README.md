@@ -6,7 +6,7 @@
 Para este proyecto individual, se creo y ejecuto de una API mediante el framework de FastAPI y el deploy en Heroku utilizando jawsDB MySQL y github
 
 
-![heroku](https://upload.wikimedia.org/wikipedia/commons/e/ec/Heroku_logo.svg){:height="36px" width="36px"}
+![heroku](https://upload.wikimedia.org/wikipedia/commons/e/ec/Heroku_logo.svg "heroku" {width=40px height=400px})
 
 ### Ejecución
 
