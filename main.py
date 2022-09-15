@@ -2,7 +2,6 @@ from sqlalchemy.types import *
 from fastapi import FastAPI
 import pandas as pd
 from database import engine
-import crud 
 
 app = FastAPI()
 
