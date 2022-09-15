@@ -4,7 +4,9 @@
 ### Consigna: Creación de una API
 
 Para este proyecto individual, se creo y ejecuto de una API mediante el framework de FastAPI y el deploy en Heroku utilizando jawsDB MySQL y github
-![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
+
+
+![](https://upload.wikimedia.org/wikipedia/commons/e/ec/Heroku_logo.svg)
 
 ### Ejecución
 
