@@ -17,7 +17,8 @@ async def root():
 
 @app.get("/piloto/")
 async def query():
-    return crud.piloto()
+    piloto=crud.piloto()
+    return piloto
    
 
 # se crea el get de fastAPI que devuelve el circuito más recorrido
