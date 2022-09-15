@@ -5,7 +5,7 @@ from models import *
 
 # se realiza la conexion a base de datos jwsDB MySQL
 
-SQLALCHEMY_DATABASE_URL = "mysql://c3zpbaqh6klc7gdq:o0x2p2l6asmydogd@cwe1u6tjijexv3r6.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/wwhlk06iufgyn4ua"
+SQLALCHEMY_DATABASE_URL = "mysql://vp8jg7l1w998w4ce:zw5pbrhj8jed88ux@cwe1u6tjijexv3r6.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/vdn9f3yrrezmxmqi"
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
