@@ -11,11 +11,11 @@ Se crearon los scripts correspondientes en phyton para:
 1. realizar la ingesta y normalización de los datasets del repositorio de github forkeado ubicado en https://github.com/FnegreteHenry/PI01_DATA03
 2. crear la conexion a base de datos jwsDB MySQL
 3. crear, instanciar y realizar las query's nesesarias para responder las preguntas de PI en el framework de FastAPI
-4. realizar el deploy en Heroku https://josetoledo-data03-dsh-fastappi.herokuapp.com/
-- Año con más carreras https://josetoledo-data03-dsh-fastappi.herokuapp.com/year/
-- Piloto con mayor cantidad de primeros puestos https://josetoledo-data03-dsh-fastappi.herokuapp.com/piloto/
-- Nombre del circuito más corrido https://josetoledo-data03-dsh-fastappi.herokuapp.com/circuito/
-- Piloto con mayor cantidad de puntos en total, cuyo constructor sea de nacionalidad sea American o British https://josetoledo-data03-dsh-fastappi.herokuapp.com/piloto_ganador
+4. realizar el deploy en Heroku https://josetoledo-dhs-fastapi.herokuapp.com/
+- Año con más carreras https://josetoledo-dhs-fastapi.herokuapp.com/year/
+- Piloto con mayor cantidad de primeros puestos https://josetoledo-dhs-fastapi.herokuapp.com/piloto/
+- Nombre del circuito más corrido https://josetoledo-dhs-fastapi.herokuapp.com/circuito/
+- Piloto con mayor cantidad de puntos en total, cuyo constructor sea de nacionalidad sea American o British https://josetoledo-dhs-fastapi.herokuapp.com/piloto_ganador/
 
 
   
