@@ -38,7 +38,7 @@ df_races['year']=df_races.year.astype(str)
 
 # creo la conexion a slq
 
-URL = "mysql://r7crviopswv3ss0g:irdzgmql2epieyfg@migae5o25m2psr4q.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/mlb40e19a14ife7z"
+URL = "mysql://izlqvlc80sbd9gd1:seq72zceq6k61so7@cwe1u6tjijexv3r6.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/aor5pfo8ypqr2uvs"
 
 engine = create_engine(URL)
 
