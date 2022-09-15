@@ -33,7 +33,7 @@ df_circuits.drop(['lat','lng','alt','url','circuitRef'], axis=1, inplace=True)
 df_drivers=pd.concat([df_drivers,pd.json_normalize(df_drivers.name, max_level=1)],axis=1)
 df_races.drop(['url','time','date'], axis=1, inplace=True)
 df_drivers.drop(['name','url','dob','code','number'], axis=1, inplace=True)
-df_results.drop(['position','fastestLapTime','time','milliseconds','fastestLapSpeed','fastestLap','grid','positionText'], axis=1, inplace=True)
+df_results.drop(['fastestLapTime','time','milliseconds','fastestLapSpeed','fastestLap','grid','positionText'], axis=1, inplace=True)
 df_races['year']=df_races.year.astype(str)
 
 # creo la conexion a slq
