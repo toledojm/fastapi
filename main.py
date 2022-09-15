@@ -1,6 +1,6 @@
 from sqlalchemy.types import *
 from fastapi import FastAPI
-from . import crud
+import crud
 
 app = FastAPI()
 
