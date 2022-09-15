@@ -8,8 +8,9 @@ import ssl
 
 
 
-# se crea la ingesta de los datasets desde 
-# el repo de github forkeado PI01_DATA03
+# se crea la ingesta de los datasets desde el repo de github forkeado PI01_DATA03
+
+# se crea las url correspondientes a cada dataset de interes
 
 ssl._create_default_https_context = ssl._create_unverified_context
 circuits = urllib.request.urlopen('https://raw.githubusercontent.com/toledojm/PI01_DATA03/main/Datasets/circuits.csv')
