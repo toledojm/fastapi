@@ -27,8 +27,7 @@ async def piloto():
                         LIMIT 1;'''
     df = pd.read_sql(query_piloto, engine)
     piloto=df.iloc[0]['piloto']
-    puesto=df.iloc[0]['CantPrimerPuesto']
-    return {"El Piloto con mayor cantidad de primeros puestos es:": piloto,"con cantidad de primeros puestos:":puesto}
+    return {"El Piloto con mayor cantidad de primeros puestos es:": piloto}
    
 
 # se crea el get de fastAPI que devuelve el circuito más recorrido
@@ -44,8 +43,7 @@ async def circuito():
                         LIMIT 1;'''
     df = pd.read_sql(query_circuito, engine)
     circuito=df.iloc[0]['circuito']
-    recorrido=df.iloc[0]['CircuitoMasRecorrido']
-    return {"El circuito más recorrido es:": circuito,"con recorridos totales:":recorrido}
+    return {"El circuito más recorrido es:": circuito}
    
 
 # se crea el get de fastAPI que devuelve el piloto más ganador 
@@ -67,8 +65,7 @@ async def piloto_ganador():
                     LIMIT 1;'''
     df = pd.read_sql(query_piloto, engine)
     piloto=df.iloc[0]['piloto']
-    puntos=df.iloc[0]['CantPuntosTotales']
-    return {"El piloto con mayor cantidad de puntos con constructor de ameriacano o britanico es:": piloto,"con puntos totales:":puntos}
+    return {"El piloto con mayor cantidad de puntos con constructor de ameriacano o britanico es:": piloto}
     
 # se crea el get de fastAPI que devuelve el año con mas carreras
 
@@ -81,6 +78,5 @@ async def year():
                     LIMIT 1;'''
     df = pd.read_sql(query_year, engine)
     year=df.iloc[0]['year']
-    carrera=df.iloc[0]['CantCarreras']
-    return {"El año con más carreras es:": year,"con cantidad de carreras:":carrera}
+    return {"El año con más carreras es:": year}
    
