@@ -21,8 +21,8 @@ Se crearon los scripts correspondientes en phyton para:
   
 ## Descripción de los Scrpits/modulos en un repositorio de github https://github.com/toledojm/fastapi
 .
-└── sql_app
-    ├── __init_.py ->se empaqueta los modulos dentro de la carpeta sql_app
+└── fastappi
+    ├── __init_.py ->se empaqueta los modulos dentro de la carpeta fastappi
     ├── crud.py -> se crean las funciones con las query's para interactuar con el database
     ├── database.py ->se crea la conexión mediante sqlalchemy al database de jwsDB MySQL
     ├── main.py ->se integran y usan todos modulos con el framework de FastAPI
