@@ -23,7 +23,7 @@ async def piloto():
                         FROM driver d JOIN result r 
                         ON (d.driverId=r.driverId) AND r.position=1
                         GROUP BY d.driverRef
-                        ORDER BY primerpuesto DESC
+                        ORDER BY CantPrimerPuesto DESC
                         LIMIT 1;'''
     df = pd.read_sql(query_piloto, engine)
     piloto=df.iloc[0]['piloto']
@@ -74,12 +74,13 @@ async def piloto_ganador():
 
 @app.get("/year/")
 async def year():
-    query_year ='''select year ,count(raceId) as carreras
+    query_year ='''select year ,count(raceId) as CantCarreras
                     from race
                     group by year
                     order by carreras DESC
                     LIMIT 1;'''
     df = pd.read_sql(query_year, engine)
     year=df.iloc[0]['year']
-    return {"El año con más carreras es:": year}
+    carrera=df.iloc[0]['CantCarreras']
+    return {"El año con más carreras es:": year,"con cantidad de carreras:":carrera}
    
