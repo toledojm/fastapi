@@ -23,7 +23,7 @@ Se crearon los scripts correspondientes en phyton para:
 
 dentro de la carpeta fastappi se crean los modulos:
 - *database.py* ->se crea la conexión mediante sqlalchemy al database de jwsDB MySQL y se crean las funciones con las query's para interactuar con el database
-- *_main.py_*->se integran y usan todos modulos con el framework de FastAPI
+- *main.py*->se integran y usan todos modulos con el framework de FastAPI
 - *models.py*->se realiza la ingesta y normalización de los datasets
 - *requirements.txt*->modulos externos a phyton para correr el el deploy en Heroku
 - *Procfile*-> contiene la sentencia de *uvicorn* para correr el framework de FastAPI
