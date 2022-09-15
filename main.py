@@ -1,8 +1,11 @@
 from sqlalchemy.types import *
 from fastapi import FastAPI
 import pandas as pd
-from database import engine
+from database import SessionLocal, engine
 import crud
+from sqlalchemy.orm import Session
+
+Session=SessionLocal()
 
 app = FastAPI()
 
@@ -10,7 +13,7 @@ app = FastAPI()
 
 @app.get("/")
 async def root():
-    return {"message": "Ingrese.../Piloto....en la url para conocer el piloto con mayor cantidad de primeros puestos...../circuito....para conocer El circuito más recorrido...../pitoto_ganador....para conocer El piloto con mayor cantidad de puntos con constructor de ameriacano o britanico....../year......para conocer El año con más carreras"}
+    return {"message": "Ingrese.../piloto....en la url para conocer el piloto con mayor cantidad de primeros puestos...../circuito....para conocer El circuito más recorrido...../pitoto_ganador....para conocer El piloto con mayor cantidad de puntos con constructor de ameriacano o britanico....../year......para conocer El año con más carreras"}
 
 # se crea mediante el metodo get de fastAPI las querys del PI 01
 

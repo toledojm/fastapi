@@ -1,6 +1,7 @@
-from database import engine
+from database import SessionLocal, engine
 import pandas as pd
 
+Session=SessionLocal()
 
 # se crea la función con la query que devuelve el Piloto con mayor cantidad de primeros puestos
 
