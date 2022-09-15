@@ -16,7 +16,7 @@ Para este proyecto individual, se creo y ejecuto una API mediante el framework d
 
 Se crearon los scripts/moldulos correspondientes en un repositorio de github para:
 1. realizar la ingesta y normalización de los datasets del repositorio de github forkeado https://github.com/FnegreteHenry/PI01_DATA03
-2. crear la conexion a base de datos jawsDB MySQL
+2. crear la conexion a la base de datos jawsDB MySQL
 3. crear, instanciar y realizar las query's nesesarias para responder las preguntas de PI en el framework de FastAPI
 4. realizar el deploy en Heroku https://josetoledo-dhs-fastapi.herokuapp.com/
 - Año con más carreras https://josetoledo-dhs-fastapi.herokuapp.com/year/
