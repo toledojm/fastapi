@@ -1,5 +1,6 @@
-from .database import engine
+from database import engine
 import pandas as pd
+
 
 # se crea la función con la query que devuelve el Piloto con mayor cantidad de primeros puestos
 

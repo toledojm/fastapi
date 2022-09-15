@@ -2,7 +2,7 @@ from sqlalchemy.types import *
 import pandas as pd
 import urllib.request
 import ssl
-from .database import engine
+from database import engine
 
 
 # se crea la ingesta de los datasets desde el repo de github forkeado PI01_DATA03
