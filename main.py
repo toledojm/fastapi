@@ -1,12 +1,11 @@
 from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.types import *
 import pandas as pd
 import urllib.request
-import ssl
-from sqlalchemy.orm import relationships
 from fastapi import FastAPI
-from sqlalchemy.types import *
+import ssl
+
+
 
 
 # busco los datos desde github
