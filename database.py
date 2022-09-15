@@ -8,7 +8,7 @@ from models import *
 SQLALCHEMY_DATABASE_URL = "mysql://prs679z1zrvo3g14:g51vxn3imv6mx9i6@cwe1u6tjijexv3r6.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/hp3gqgswj6ocf8l3"
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
-
+#holla
 # se ingesta los datos a tablas a un database de jwsDB MySQL
 # se crea claves primarias y foraneas para relacionar las tablas creadas
 
