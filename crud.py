@@ -1,4 +1,4 @@
-from .database import engine
+from main import engine
 import pandas as pd
 
 engine.connect()
