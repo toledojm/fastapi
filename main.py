@@ -74,7 +74,7 @@ async def year():
     query_year ='''select year ,count(raceId) as CantCarreras
                     from race
                     group by year
-                    order by carreras DESC
+                    order by CantCarreras DESC
                     LIMIT 1;'''
     df = pd.read_sql(query_year, engine)
     year=df.iloc[0]['year']
