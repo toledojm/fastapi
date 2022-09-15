@@ -10,7 +10,7 @@ app = FastAPI()
 
 @app.get("/")
 async def root():
-    return {"message": "Ingrese.../piloto....en la url para conocer el piloto con mayor cantidad de primeros puestos...../circuito....para conocer El circuito más recorrido...../pitoto_ganador....para conocer El piloto con mayor cantidad de puntos con constructor de ameriacano o britanico....../year......para conocer El año con más carreras"}
+    return {"message": "añadir a la dirrecion URL:/piloto/->para conocer el piloto con mayor cantidad de primeros puestos,/circuito/->para conocer El circuito más recorrido,/piloto_ganador/->para conocer El piloto con mayor cantidad de puntos con constructor de ameriacano o britanico,/year/->para conocer el año con más carreras realizadas"}
 
 # se crea mediante el metodo get de fastAPI las querys del PI 01
 
@@ -19,7 +19,7 @@ async def root():
 
 @app.get("/piloto/")
 async def piloto():
-    query_piloto ='''SELECT DISTINCT d.driverRef as piloto, count(d.driverRef) as primerpuesto 
+    query_piloto ='''SELECT DISTINCT d.driverRef as piloto, count(d.driverRef) as CantPrimerPuesto 
                         FROM driver d JOIN result r 
                         ON (d.driverId=r.driverId) AND r.position=1
                         GROUP BY d.driverRef
@@ -27,7 +27,8 @@ async def piloto():
                         LIMIT 1;'''
     df = pd.read_sql(query_piloto, engine)
     piloto=df.iloc[0]['piloto']
-    return {"El Piloto con mayor cantidad de primeros puestos es:": piloto}
+    puesto=df.iloc[0]['CantPrimerPuesto']
+    return {"El Piloto con mayor cantidad de primeros puestos es:": piloto,"con cantidad de primeros puestos:":puesto}
    
 
 # se crea el get de fastAPI que devuelve el circuito más recorrido
@@ -43,7 +44,8 @@ async def circuito():
                         LIMIT 1;'''
     df = pd.read_sql(query_circuito, engine)
     circuito=df.iloc[0]['circuito']
-    return {"El circuito más recorrido es:": circuito}
+    recorrido=df.iloc[0]['CircuitoMasRecorrido']
+    return {"El circuito más recorrido es:": circuito,"con recorridos totales:":recorrido}
    
 
 # se crea el get de fastAPI que devuelve el piloto más ganador 
@@ -65,7 +67,8 @@ async def piloto_ganador():
                     LIMIT 1;'''
     df = pd.read_sql(query_piloto, engine)
     piloto=df.iloc[0]['piloto']
-    return {"El piloto con mayor cantidad de puntos con constructor de ameriacano o britanico es:": piloto}
+    puntos=df.iloc[0]['CantPuntosTotales']
+    return {"El piloto con mayor cantidad de puntos con constructor de ameriacano o britanico es:": piloto,"con puntos totales:":puntos}
     
 # se crea el get de fastAPI que devuelve el año con mas carreras
 
