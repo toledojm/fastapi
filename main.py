@@ -89,13 +89,15 @@ async def piloto():
 
 @app.get("/circuito/")
 async def citcuito():
-    query_circuito ='''select name, count(circuitId) as CircuitoMasRecorrido
-                    from race
-                    group by name
-                    order by CircuitoMasRecorrido DESC
-                    LIMIT 1;'''
+    query_circuito ='''select distinct c.name as circuito, count(r.circuitId) as CircuitoMasRecorrido
+                        from circuit c
+                        join race r
+                        on r.circuitId=c.circuitId
+                        group by c.name
+                        order by CircuitoMasRecorrido DESC
+                        LIMIT 1;'''
     df = pd.read_sql(query_circuito, engine)
-    circuito=df.iloc[0]['name']
+    circuito=df.iloc[0]['circuito']
     return {"El circuito más recorrido es:": circuito}
 
 # creo url con la query el piloto más ganador 
