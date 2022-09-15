@@ -3,13 +3,14 @@
 
 ### Consigna: Creación de una API
 
-Para este proyecto individual, se creo y ejecuto de una API mediante el framework de FastAPI y el deploy en Heroku.
+Para este proyecto individual, se creo y ejecuto de una API mediante el framework de FastAPI y el deploy en Heroku utilizando jawsDB MySQL y github
+![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
 
 ### Ejecución
 
 Se crearon los scripts correspondientes en phyton para:
 1. realizar la ingesta y normalización de los datasets del repositorio de github forkeado ubicado en https://github.com/FnegreteHenry/PI01_DATA03
-2. crear la conexion a base de datos jwsDB MySQL
+2. crear la conexion a base de datos jawsDB MySQL
 3. crear, instanciar y realizar las query's nesesarias para responder las preguntas de PI en el framework de FastAPI
 4. realizar el deploy en Heroku https://josetoledo-dhs-fastapi.herokuapp.com/
 - Año con más carreras https://josetoledo-dhs-fastapi.herokuapp.com/year/
