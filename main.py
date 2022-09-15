@@ -38,9 +38,9 @@ df_races['year']=df_races.year.astype(str)
 
 # creo la conexion a slq
 
-URL = "mysql+pymysql://root:toledin1@localhost/db"
+URL = "mysql://r7crviopswv3ss0g:irdzgmql2epieyfg@migae5o25m2psr4q.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/mlb40e19a14ife7z"
 
-engine = create_engine(URL, pool_pre_ping=True)
+engine = create_engine(URL)
 
 # ingesto los datos a tablas de un database sql
 # creo claves primarias y foraneas y relaciono las tablas
