@@ -19,7 +19,7 @@ Se crearon los scripts/moldulos correspondientes en un repositorio de github par
 
 2. Se creo la conexion a la base de datos jawsDB MySQL
 
-3. Se realizaron las querys nesesarias para responder las preguntas de Proyento Individual con el metodo get del framework de FastAPI
+3. Se realizaron las querys nesesarias para responder las preguntas de Proyecto Individual con el metodo get del framework de FastAPI
 
 4. Se realizó el deploy en Heroku
 
