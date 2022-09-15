@@ -3,7 +3,7 @@
 
 ### Consigna: Creación de una API
 
-Para este proyecto individual, se creo y ejecuto de una API mediante el framework de FastAPI y el deploy en Heroku utilizando jawsDB MySQL y github
+Para este proyecto individual, se creo y ejecuto una API mediante el framework de FastAPI y el deploy en Heroku utilizando jawsDB MySQL y github
 
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Heroku_logo.svg/320px-Heroku_logo.svg.png)
 ![](https://upload.wikimedia.org/wikiversity/en/thumb/8/8c/FastAPI_logo.png/320px-FastAPI_logo.png)
