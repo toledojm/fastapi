@@ -53,7 +53,7 @@ dentro de la carpeta fastappi se crean los modulos:
 
 ### Presentación del PI
 
-Para la presentación de proyecto se realizó un video explicato en el siguente link: https://www.youtube.com/watch?v=qU0uHV2NGCU
+Para la presentación de proyecto se realizó un video explicato en el siguente link: https://www.youtube.com/watch?v=ge2Aot3kbZQ&ab_channel=josetoledo
 
 
 
