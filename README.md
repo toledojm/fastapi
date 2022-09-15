@@ -1,5 +1,5 @@
 # Proyecto Individual 1- Data 03- Soy Henry
-###### José María Toledo
+## José María Toledo
 
 ### Consigna: Creación de una API
 
