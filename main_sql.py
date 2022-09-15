@@ -33,14 +33,14 @@ df_circuits.drop(['lat','lng','alt','url','circuitRef'], axis=1, inplace=True)
 df_drivers=pd.concat([df_drivers,pd.json_normalize(df_drivers.name, max_level=1)],axis=1)
 df_races.drop(['url','time','date'], axis=1, inplace=True)
 df_drivers.drop(['name','url','dob','code','number'], axis=1, inplace=True)
-df_results.drop(['position','fastestLapTime','time','milliseconds','fastestLapSpeed','fastestLap','grid','positionText'], axis=1, inplace=True)
+df_results.drop(['fastestLapTime','time','milliseconds','fastestLapSpeed','fastestLap','grid','positionText'], axis=1, inplace=True)
 df_races['year']=df_races.year.astype(str)
 
 # creo la conexion a slq
 
-URL = "mysql://izlqvlc80sbd9gd1:seq72zceq6k61so7@cwe1u6tjijexv3r6.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/aor5pfo8ypqr2uvs"
+URL = "mysql+pymysql://root:toledin1@localhost/db"
 
-engine = create_engine(URL)
+engine = create_engine(URL, pool_pre_ping=True)
 
 # ingesto los datos a tablas de un database sql
 # creo claves primarias y foraneas y relaciono las tablas
@@ -70,17 +70,19 @@ app = FastAPI()
 
 @app.get("/")
 async def root():
-    return {"message": "Ingrese.../Piloto....en la url para conocer el piloto con mayor cantidad de primeros puestos...../circuito....para conocer El circuito más recorrido...../pitoto_ganador....para conocer El piloto con mayor cantidad de puntos con constructor de ameriacano o britanico....../year......para conocer El año con más carreras"}
+    return {"message": "Ingrese /Piloto en la url para conocer el piloto con mayor cantidad de primeros puestos\nIngrese /circuito en la url para conocer El circuito más recorrido\nIngrese /pitoto_ganador en la url para conocer El piloto con mayor cantidad de puntos con constructor de ameriacano o britanico\nIngrese /year en la url para conocer El año con más carreras\n"}
 
 # creo url con la query que muestre el Piloto con mayor cantidad de primeros puestos
 
 @app.get("/piloto/")
-async def piloto():
-    query_piloto ='''SELECT DISTINCT d.driverRef as piloto, count(d.driverRef) as primerpuesto 
-                        FROM driver d JOIN result r 
-                        ON (d.driverId=r.driverId) AND r.position=1
-                        GROUP BY d.driverRef
-                        ORDER BY primerpuesto DESC
+async def piloto1():
+    query_piloto ='''select d.surname as piloto, count(r.positionOrder) as CantVictorias
+                        from driver d
+                        join result r
+                        on (r.driverId = d.driverId)
+                        where r.positionOrder = 1
+                        group by d.surname
+                        order by CantVictorias DESC
                         LIMIT 1;'''
     df = pd.read_sql(query_piloto, engine)
     piloto=df.iloc[0]['piloto']
@@ -89,7 +91,7 @@ async def piloto():
 #creo url con la query con el circuito más recorrido
 
 @app.get("/circuito/")
-async def citcuito():
+async def citcuito1():
     query_circuito ='''select name, count(circuitId) as CircuitoMasRecorrido
                     from race
                     group by name
@@ -103,7 +105,7 @@ async def citcuito():
 # con constructor americano o britanico
 
 @app.get("/piloto_ganador/")
-async def piloto_ganador():
+async def piloto2():
     query_piloto ='''select r.surname as piloto, sum(r.points) as CantPuntosTotales
                     from (select c.constructorId
                             from constructor c
@@ -121,7 +123,7 @@ async def piloto_ganador():
     return {"El piloto con mayor cantidad de puntos con constructor de ameriacano o britanico es:": piloto}
 
 @app.get("/year/")
-async def year():
+async def year1():
     query_year ='''select year ,count(raceId) as carreras
                     from race
                     group by year
