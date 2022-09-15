@@ -1,5 +1,7 @@
 from sqlalchemy.types import *
 from fastapi import FastAPI
+import pandas as pd
+from database import engine
 import crud
 
 app = FastAPI()
@@ -16,9 +18,16 @@ async def root():
 # se crea el get de fastAPI  que devuelve el Piloto con mayor cantidad de primeros puestos
 
 @app.get("/piloto/")
-async def query():
-    piloto=crud.piloto()
-    return piloto
+async def piloto():
+    query_piloto ='''SELECT DISTINCT d.driverRef as piloto, count(d.driverRef) as primerpuesto 
+                        FROM driver d JOIN result r 
+                        ON (d.driverId=r.driverId) AND r.position=1
+                        GROUP BY d.driverRef
+                        ORDER BY primerpuesto DESC
+                        LIMIT 1;'''
+    df = pd.read_sql(query_piloto, engine)
+    piloto=df.iloc[0]['piloto']
+    return {"El Piloto con mayor cantidad de primeros puestos es:": piloto}
    
 
 # se crea el get de fastAPI que devuelve el circuito más recorrido
