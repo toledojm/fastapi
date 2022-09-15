@@ -51,5 +51,9 @@ dentro de la carpeta fastappi se crean los modulos:
 
 - Piloto con mayor cantidad de puntos en total, cuyo constructor sea de nacionalidad sea American o British https://josetoledo-dhs-fastapi.herokuapp.com/piloto_ganador/
 
+### Presentación del PI
+
+Para la presentación de proyecto se realizó un video explicato en el siguente link: https://www.youtube.com/watch?v=qU0uHV2NGCU
+
 
 
