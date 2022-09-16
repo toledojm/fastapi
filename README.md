@@ -43,9 +43,9 @@ dentro de la carpeta fastappi se crean los modulos:
 
 - Pantalla principal https://josetoledo-dhs-fastapi.herokuapp.com/
 
-- Año con más carreras https://josetoledo-dhs-fastapi.herokuapp.com/year/
+- Año con más carreras https:/https://josetoledo-dhs-fastapi.herokuapp.com/year/
 
-- Piloto con mayor cantidad de primeros puestos https://josetoledo-dhs-fastapi.herokuapp.com/piloto/
+- Piloto con mayor cantidad de primeros puestos  https://josetoledo-dhs-fastapi.herokuapp.com/piloto/
 
 - Nombre del circuito más corrido https://josetoledo-dhs-fastapi.herokuapp.com/circuito/
 
